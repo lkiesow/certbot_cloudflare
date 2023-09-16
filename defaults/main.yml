@@ -1,0 +1,6 @@
+---
+
+certbot_cloudflare_pre_hook: ''
+certbot_cloudflare_post_hook: ''
+certbot_cloudflare_domains:
+  - '{{ inventory_hostname }}'
