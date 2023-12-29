@@ -17,9 +17,9 @@
     line: '{{ item.type }}_HOOK="{{ item.hook }}"'
   loop:
     - type: PRE
-      hook: '{{ certbot_cloudflare_pre_hook }}'
+      hook: "{{ certbot_cloudflare_pre_hook | replace('\u0022', '\\\u0022') }}"
     - type: POST
-      hook: '{{ certbot_cloudflare_post_hook }}'
+      hook: "{{ certbot_cloudflare_post_hook | replace('\u0022', '\\\u0022') }}"
 
 - name: Configure Cloudflare API token
   ansible.builtin.copy:
